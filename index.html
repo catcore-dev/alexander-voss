@@ -3,165 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Elias Renner — Photographer &amp; Director</title>
+<title>NINA KOVACS — Director &amp; Photographer</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0b0a09;--ink:#e4ddd5;--warm:#c8985a;--muted:#5c5852;--line:#ffffff0a}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'EB Garamond','Times New Roman',Georgia,serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::-webkit-scrollbar{width:0}
-::selection{background:#c8985a33;color:#e4ddd5}
+html{scroll-behavior:smooth}
+body{font-family:'Times New Roman',Georgia,serif;background:#f8f5f0;color:#1a1714;line-height:1.5;-webkit-font-smoothing:antialiased}
+::selection{background:#e07a3d33;color:#1a1714}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:all .5s;mix-blend-mode:difference}
-nav a{color:#fff;text-decoration:none;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.8rem 6%;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
+nav.scrolled{background:#f8f5f0ee;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:1rem 6%;border-bottom:1px solid #e8e3db}
+.nav-logo{font-size:1.15rem;font-weight:700;letter-spacing:.2em;color:#1a1714;text-decoration:none;font-style:italic}
 .nav-links{display:flex;gap:2rem;list-style:none}
-.logo{font-weight:700;font-size:.85rem;letter-spacing:.35em}
+.nav-links a{color:#8a8580;text-decoration:none;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;transition:color .3s;font-family:-apple-system,sans-serif;cursor:pointer}
+.nav-links a:hover{color:#e07a3d}
 
-/* PANEL */
-.panel{position:relative;min-height:100vh;display:flex;align-items:center;padding:4rem 8%;overflow:hidden}
-.panel::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,#0b0a0900 40%,#0b0a09 100%);pointer-events:none;z-index:1}
+section{padding:5rem 6%;max-width:1300px;margin:0 auto}
 
-/* HERO */
-.hero-panel{align-items:flex-end;padding-bottom:8rem}
-.hero-content{position:relative;z-index:2;max-width:720px}
-.hero-num{font-family:-apple-system,sans-serif;font-size:.65rem;letter-spacing:.35em;color:var(--warm);text-transform:uppercase;margin-bottom:2rem;opacity:0;animation:rise .8s .3s forwards}
-.hero-content h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:400;line-height:1.05;letter-spacing:-.01em;opacity:0;animation:rise .8s .5s forwards}
-.hero-content h1 em{font-style:italic;color:var(--warm)}
-.hero-tag{font-size:1.05rem;color:var(--muted);margin-top:2rem;max-width:420px;font-weight:400;opacity:0;animation:rise .8s .7s forwards}
-@keyframes rise{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+.hero{padding-top:10rem;padding-bottom:5rem;text-align:center}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:400;font-style:italic;letter-spacing:-.01em;line-height:1.1;margin-bottom:1.5rem}
+.hero h1 em{color:#e07a3d;font-style:italic}
+.hero p{font-size:1rem;color:#6e6a65;max-width:480px;margin:0 auto 2rem;line-height:1.7}
+.hero-links{display:flex;justify-content:center;gap:2rem;font-family:-apple-system,sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase}
+.hero-links a{color:#e07a3d;text-decoration:none;cursor:pointer;transition:color .3s}
+.hero-links a:hover{color:#b85a1f}
 
-/* FEATURED */
-.featured-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;width:100%}
-.f-image{position:relative;aspect-ratio:3/4;background:var(--line);overflow:hidden}
-.f-image::before{content:'';position:absolute;inset:15%;border:1px solid #ffffff08;z-index:1}
-.f-image .fg{position:absolute;inset:10%;background:linear-gradient(135deg,#1a1612 0%,#141210 30%,#1c1814 70%,#161310 100%)}
-.f-image .fg::after{content:'';position:absolute;top:20%;left:30%;width:100px;height:140px;border:1px solid #c8985a18;transform:rotate(-5deg)}
-.f-info h2{font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:400;margin-bottom:1.5rem;line-height:1.3}
-.f-info p{color:var(--muted);font-size:.95rem;line-height:1.8;margin-bottom:2rem;max-width:380px}
-.f-stats{display:flex;gap:3rem}
-.f-stats div{font-family:-apple-system,sans-serif}
-.f-stats .n{font-size:2rem;font-weight:300;color:var(--warm);line-height:1}
-.f-stats .l{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:.5rem}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:400px 300px;gap:4px}
+.gallery a{display:block;overflow:hidden;cursor:pointer;text-decoration:none;position:relative}
+.gallery a img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gallery a:hover img{transform:scale(1.04)}
+.gallery a:nth-child(1){grid-column:span 3}
+.gallery a:nth-child(2){grid-column:span 3}
+.gallery a:nth-child(3){grid-column:span 3}
+.gallery a:nth-child(4){grid-column:span 3}
 
-/* GALLERY STRIP */
-.gallery-strip{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;width:100%}
-.gallery-item{aspect-ratio:1;background:var(--line);position:relative;overflow:hidden;cursor:pointer;transition:all .5s}
-.gallery-item:hover{transform:scale(1.03);z-index:2}
-.gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,#0b0a09aa 0%,transparent 40%);opacity:0;transition:opacity .4s}
-.gallery-item:hover::after{opacity:1}
-.gallery-item .gi{position:absolute;inset:0;background:linear-gradient(135deg,#111 0%,#1a1a1a 100%);transition:all 2s}
-.gallery-item .gi::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:#c8985a10;transition:all 1s}
-.gallery-item:hover .gi::after{width:60px;height:60px;background:#c8985a05}
-.gi-1{background:linear-gradient(150deg,#12100e,#1a1612,#14110d)!important}
-.gi-2{background:linear-gradient(200deg,#14110f,#1c1815,#100e0c)!important}
-.gi-3{background:linear-gradient(100deg,#110f0d,#181512,#151210)!important}
-.gi-4{background:linear-gradient(220deg,#13100e,#1a1512,#0f0d0b)!important}
-.gi-5{background:linear-gradient(300deg,#100e0c,#1c1814,#161310)!important}
-.gi-6{background:linear-gradient(160deg,#12100e,#181410,#14120f)!important}
+.gallery a .caption{position:absolute;bottom:1rem;left:1rem;color:#fff;font-family:-apple-system,sans-serif;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;opacity:0;transition:opacity .3s;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.gallery a:hover .caption{opacity:1}
 
-/* TEXT PANEL */
-.text-panel{min-height:70vh}
-.text-content{position:relative;z-index:2;max-width:560px;margin-left:auto}
-.text-content h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;margin-bottom:2rem;line-height:1.2}
-.text-content p{color:var(--muted);font-size:.95rem;line-height:1.9;margin-bottom:1.5rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-text h2{font-size:2.2rem;font-weight:400;font-style:italic;margin-bottom:2rem;line-height:1.2}
+.about-text p{color:#6e6a65;font-size:.95rem;line-height:1.85;margin-bottom:1.2rem}
+.about-text .stats{display:flex;gap:3rem;margin-top:2rem;font-family:-apple-system,sans-serif}
+.about-text .stats div .n{font-size:2rem;font-weight:600;color:#e07a3d;line-height:1}
+.about-text .stats div .l{font-size:.65rem;color:#8a8580;letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem}
+.about-img{width:100%;aspect-ratio:3/4;object-fit:cover}
 
-/* CLIENTS */
-.client-marquee{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2.5rem;width:100%}
-.client-marquee span{font-family:-apple-system,sans-serif;font-size:.8rem;color:#3a3630;letter-spacing:.15em;text-transform:uppercase;transition:color .4s}
-.client-marquee span:hover{color:var(--warm)}
+.clients{margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;font-family:-apple-system,sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#c4bfb6}
+.clients span{transition:color .3s}
+.clients span:hover{color:#e07a3d}
 
-/* CONTACT */
-.contact-panel{min-height:60vh;align-items:center}
-.contact-box{position:relative;z-index:2;max-width:500px;width:100%}
-.contact-box h2{font-size:1.8rem;font-weight:400;margin-bottom:2rem}
-.contact-box p{color:var(--muted);margin-bottom:2.5rem;line-height:1.8;font-size:.9rem}
-.contact-box a{color:var(--warm);text-decoration:none;font-family:-apple-system,sans-serif;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;display:block;margin-top:2rem;transition:color .3s}
-.contact-box a:hover{color:var(--ink)}
+.contact-block{background:#1a1714;color:#e8e3db;padding:5rem 6%;border-radius:6px;text-align:center;margin-top:3rem}
+.contact-block h2{font-size:2rem;font-weight:400;font-style:italic;margin-bottom:1rem}
+.contact-block p{color:#8a8580;max-width:400px;margin:0 auto 2.5rem;font-size:.9rem;line-height:1.7}
+.contact-block a{color:#e07a3d;text-decoration:none;font-family:-apple-system,sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;display:inline-block;margin:0 1.5rem;cursor:pointer;transition:color .3s}
+.contact-block a:hover{color:#f08a5d}
 
-/* ANIMATION */
-.reveal{opacity:0;transform:translateY(35px);transition:all 1s cubic-bezier(.22,1,.36,1)}
-.reveal.on{opacity:1;transform:translateY(0)}
+footer{padding:2.5rem 6%;text-align:center;color:#c4bfb6;font-size:.68rem}
 
 @media(max-width:768px){
-  nav{padding:1.5rem}
-  .panel{padding:3rem 1.5rem}
-  .featured-grid,.gallery-strip{grid-template-columns:1fr}
-  .contact-panel{padding:4rem 1.5rem}
+  .hero{padding-top:8rem}
+  .gallery{grid-template-columns:1fr;grid-template-rows:repeat(4,250px)}
+  .gallery a:nth-child(n){grid-column:span 1}
+  .about{grid-template-columns:1fr;gap:2rem}
+  .nav-links{display:none}
+  section{padding:3rem 1.2rem}
+  .contact-block{padding:3rem 1.5rem}
 }
 </style>
 </head>
 <body>
-<nav><a href="#" class="logo">ELIAS RENNER</a><ul class="nav-links"><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">Nina Kovacs</a>
+  <ul class="nav-links"><li><a href="#portfolio">Portfolio</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav>
 
 <main>
 
-<section class="panel hero-panel" id="home">
-  <div class="hero-content">
-    <div class="hero-num">Selected Portfolio &bull; 2019&ndash;2026</div>
-    <h1>Light is the only subject. <em>Everything else follows.</em></h1>
-    <p class="hero-tag">Elias Renner is a Paris-based photographer and director working at the intersection of fashion, architecture, and visual anthropology.</p>
-  </div>
+<section class="hero" id="home">
+  <h1>Stories told <em>in light.</em></h1>
+  <p>Nina Kovacs is a Budapest-born director and photographer. She shoots fashion editorials, documentary portraits, and the occasional music video. Her work appears in Vogue, i-D, and the Venice Biennale.</p>
+  <div class="hero-links"><a href="#portfolio">View work</a><a href="mailto:studio@ninakovacs.com">Get in touch</a></div>
 </section>
 
-<section class="panel" id="work">
-  <div class="featured-grid reveal">
-    <div class="f-image"><div class="fg"></div></div>
-    <div class="f-info">
-      <h2>Editorial &amp; Campaigns</h2>
-      <p>From Vogue Italia to independent galleries — twenty-two solo exhibitions and over eighty editorial spreads. Known for controlled shadow, deliberate grain, and never asking subjects to smile.</p>
-      <div class="f-stats">
-        <div><div class="n">82</div><div class="l">Editorials</div></div>
-        <div><div class="n">22</div><div class="l">Exhibitions</div></div>
-        <div><div class="n">14</div><div class="l">Countries</div></div>
-      </div>
+<section class="gallery" id="portfolio">
+  <a href="#" onclick="alert('Editorial: Vogue Italia, March 2025\n\nShot in Palermo over four days. 35mm film. Available for licensing.')">
+    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=700&q=80" alt="Portrait">
+    <span class="caption">Vogue Italia — Palermo, 2025</span>
+  </a>
+  <a href="#" onclick="alert('Documentary: The Last Workshop\n\nOngoing series documenting artisans in decline across Eastern Europe. 12 portraits to date.')">
+    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&q=80" alt="Workshop">
+    <span class="caption">The Last Workshop — Eastern Europe</span>
+  </a>
+  <a href="#" onclick="alert('Campaign: Maison Valmont, FW 2024\n\nFull campaign shot in the French Alps. Film and digital.')">
+    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=700&q=80" alt="Campaign">
+    <span class="caption">Maison Valmont — French Alps</span>
+  </a>
+  <a href="#" onclick="alert('Personal: Along the Danube\n\nOngoing personal project. Black and white medium format. 2023–present.')">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80" alt="Danube">
+    <span class="caption">Along the Danube — Personal Work</span>
+  </a>
+</section>
+
+<section class="about" id="about">
+  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt="Nina Kovacs" class="about-img">
+  <div class="about-text">
+    <h2>Photography is patience. The rest is just gear.</h2>
+    <p>Born in Budapest, 1987. Studied film at FAMU in Prague before moving to Paris in 2012. Shot her first Vogue editorial at 26 and never looked back.</p>
+    <p>Nina works exclusively on film for editorial work and reserves digital for commercial campaigns. She describes her style as "documentary with intention" — images that feel found rather than constructed.</p>
+    <p>Based between Paris and Budapest. Available for commissioned work worldwide.</p>
+    <div class="stats">
+      <div><div class="n">46</div><div class="l">Editorials</div></div>
+      <div><div class="n">14</div><div class="l">Campaigns</div></div>
+      <div><div class="n">8</div><div class="l">Exhibitions</div></div>
     </div>
   </div>
 </section>
 
-<section class="panel" style="padding:0">
-  <div class="gallery-strip reveal">
-    <div class="gallery-item"><div class="gi gi-1"></div></div>
-    <div class="gallery-item"><div class="gi gi-2"></div></div>
-    <div class="gallery-item"><div class="gi gi-3"></div></div>
-    <div class="gallery-item"><div class="gi gi-4"></div></div>
-    <div class="gallery-item"><div class="gi gi-5"></div></div>
-    <div class="gallery-item"><div class="gi gi-6"></div></div>
+<section style="padding:3rem 6%">
+  <div class="clients">
+    <span>Vogue Italia</span><span>i-D Magazine</span><span>Maison Valmont</span>
+    <span>Another Magazine</span><span>Reformation</span><span>Palais de Tokyo</span>
+    <span>Document Journal</span><span>Hermès</span>
   </div>
 </section>
 
-<section class="panel text-panel" id="about">
-  <div class="text-content reveal">
-    <h2>Born in Vienna. Working everywhere.</h2>
-    <p>Elias studied philosophy before picking up a camera. That sequence still matters. He approaches each commission as a question rather than a task — what is this image trying to become, and what does it need from us to get there.</p>
-    <p>His work has been published in Vogue, Harper's Bazaar, GQ, and The New York Times. He has shot campaigns for Herm&egrave;s, Prada, and Maison Margiela, though he prefers independent projects and gallery commissions.</p>
-    <p>Currently based between Paris and Vienna, available for commissioned work worldwide.</p>
-  </div>
-</section>
-
-<section class="panel" style="padding:5rem 8%;min-height:30vh">
-  <div class="client-marquee reveal">
-    <span>Vogue Italia</span><span>Herm&egrave;s</span><span>Prada</span><span>GQ</span>
-    <span>Maison Margiela</span><span>NYT Magazine</span><span>Document Journal</span><span>Palais de Tokyo</span>
-  </div>
-</section>
-
-<section class="panel contact-panel" id="contact">
-  <div class="contact-box reveal">
-    <h2>Commissioned work, licensing, and collaborations.</h2>
-    <p>Elias accepts a limited number of commissions per year. For editorial work, campaign briefs, and exhibition proposals, reach out to the studio.</p>
-    <a href="mailto:studio@renner.photo">studio@renner.photo</a>
-    <a href="#">+33 1 87 44 95 10</a>
-    <a href="#">Instagram</a>
-  </div>
+<section class="contact-block" id="contact">
+  <h2>Let's make something together.</h2>
+  <p>For editorial commissions, campaign briefs, and exhibition proposals. Nina accepts six to eight projects per year.</p>
+  <a href="mailto:studio@ninakovacs.com">Email</a>
+  <a href="#" onclick="alert('Studio Nina Kovacs\nParis +33 1 87 44 95 10\nBudapest +36 1 445 6712')">Phone</a>
+  <a href="#" onclick="alert('@ninakovacs on Instagram')">Instagram</a>
 </section>
 
 </main>
 
+<footer>&copy; 2026 Nina Kovacs Studio. All rights reserved.</footer>
+
 <script>
-window.addEventListener('scroll',()=>!1);
-const obs=new IntersectionObserver(e=>e.forEach(x=>{x.isIntersecting&&x.target.classList.add('on')}),{threshold:.2});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60)});
+
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var id=this.getAttribute('href');
+    if(id==='#')return;
+    e.preventDefault();
+    var el=document.querySelector(id);
+    if(el)el.scrollIntoView({behavior:'smooth'});
+  });
+});
 </script>
+
 </body>
 </html>
